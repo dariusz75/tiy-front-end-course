@@ -37,7 +37,7 @@ _You **can** combine them_
 ##Small table examlpe
 
 First Header | Second Header | Second Header
------------- | -------------   -------------
+------------ | ------------- | -------------
 Content from cell 1 | Content from cell 2 | Content from cell 3
 Content in the 1st column | Content in the 2nd column | Content in the 3th column
 Another cell | and another cell | And another
