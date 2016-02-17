@@ -4,8 +4,8 @@
 </head>
 <body>
 <form action=" " method = " ">
-  <textarea name="note"></textarea> <br>
-  <button type="Comment" >Like</button>
+<textarea name=" " rows="10" cols="30"></textarea> <br>
+<button type="submit" >Comment</button>
 </form>
 </body>
 </html>
