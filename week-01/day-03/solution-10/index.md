@@ -1,0 +1,14 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form action=" " method=" ">
+    <input type="checkbox" name=" " value=" ">Small
+    <input type="checkbox" name=" " value=" ">Medium
+    <input type="checkbox" name=" " value=" ">Large
+    <br><br>
+    <button>Add to basket</button>
+</form> 
+</body>
+</html>
