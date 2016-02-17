@@ -3,7 +3,7 @@
 <title></title>
 </head>
 <body>
-  <table width = "50%" border="1">
+  <table>
     <tr>
       <td>1</td><td colspan="3">2</td>
     </tr>
