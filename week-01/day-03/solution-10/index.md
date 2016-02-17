@@ -4,9 +4,9 @@
 </head>
 <body>
 <form action=" " method=" ">
-    <input type="checkbox" name=" " value=" ">Small
-    <input type="checkbox" name=" " value=" ">Medium
-    <input type="checkbox" name=" " value=" ">Large
+    <input type="radio" name=" " value=" ">Small
+    <input type="radio" name=" " value=" ">Medium
+    <input type="radio" name=" " value=" ">Large
     <br><br>
     <button>Add to basket</button>
 </form> 
