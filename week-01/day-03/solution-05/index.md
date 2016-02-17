@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>HTML Table Colspan/Rowspan</title>
+<title></title>
 </head>
 <body>
-<table border="1">
+<table>
   <tr>
     <th></th>
     <th>09:00</th>
