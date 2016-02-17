@@ -34,7 +34,7 @@ The HTML `<abbr>` element (or HTML Abbreviation Element) represents an abbreviat
 Example - http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_abbr_test
 
 
-###'<cite>'
+###`<cite>`
 The HTML Citation Element (`<cite>`) represents a reference to a creative work. It must include the title of a work or a URL reference, which may be in an abbreviated form according to the conventions used for the addition of citation metadata.
 
 Example - http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_cite
@@ -70,7 +70,7 @@ Browsers will normally strike a line through deleted text.
 Example - http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_del
 
 
-###'<s>'
+###`<s>`
 The `<s>` tag specifies text that is no longer correct, accurate or relevant.
 The `<s>` tag should not be used to define replaced or deleted text, use the `<del>` tag to define replaced or deleted text.
 
