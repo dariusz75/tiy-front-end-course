@@ -4,10 +4,10 @@
 </head>
 <body>
 
-	<form action="" method="post">
-  	<input type="text" name="comments" />
-  	<button>Comment</button>
-	</form>
+<form action="demo_form_exercise.php">
+  <textarea name="note"></textarea> <br>
+  <button type="Comment" >Like</button>
+</form>
 
 </body>
 </html>
