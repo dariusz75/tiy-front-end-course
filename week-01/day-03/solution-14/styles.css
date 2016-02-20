@@ -10,7 +10,7 @@ a{
 	text-decoration: none;
 }
 
-
+/* ########### HEADER ######################################## */
 header{
 	position: relative;
 	width: 100%;
@@ -31,7 +31,6 @@ nav{
 	right: 30px;
 	top:30px;
 }
-
 
 nav ul li{
 	display: inline-block;
@@ -55,7 +54,7 @@ nav ul li input{
 	background-color: #5F6265;
 }
 
-
+/* ########### ABOUT SECTION ######################################## */
 .about{
 	width: 100%;
 	padding: 15px;	
@@ -64,6 +63,7 @@ nav ul li input{
 	float: left;
 }
 
+/* ########### PLANNING SECTION ######################################## */
 .planning{
 	width: 100%;
 	background-color: #B6C6BD;
@@ -71,6 +71,7 @@ nav ul li input{
 	float: left;
 }
 
+/* ########### FUNDING SECTION ######################################## */
 .funding{
 	width: 100%;
 	background-color: #C1E1D1;
@@ -88,6 +89,7 @@ nav ul li input{
 	float: left;
 }
 
+/* ########### FACTS SECTION ######################################## */
 .facts{
 	width: 100%;
 	background-color: #60C38C;
@@ -115,9 +117,10 @@ i.fa{
 }
 
 i.fa.fa-hand-o-right{
-	font-size: 40px;
+	font-size: 30px;
 }
 
+/* ########### TENANTS SECTION ######################################## */
 .tenants{
 	width: 100%;
 	background-color: #B6C6BD;
@@ -185,6 +188,7 @@ button.submit{
 	margin-top: 20px;
 }
 
+/* ########### IFRAMES SECTION ######################################## */
 .iframes{
 	width: 100%;
 	background-color: #C1E1D1;
