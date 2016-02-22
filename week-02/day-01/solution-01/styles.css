@@ -1,0 +1,28 @@
+*{
+	font-family: 'Catamaran', sans-serif;
+	font-weight: 200;
+}
+
+a{
+	display: table;
+	margin: 30px auto 0 auto;
+	text-decoration: none;
+	color: green;
+}
+
+a:visited { 
+    color: red;
+}
+
+a:hover { 
+    color: blue;
+}
+
+a:active { 
+    color: purple;
+}
+ 
+a:focus {
+	font-weight: 400;
+	font-size: 1.5em;
+}
