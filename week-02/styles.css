@@ -1,0 +1,29 @@
+body{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	width: 33.3333%;
+	display: inline-block;
+	text-align: center;
+	float: left;
+}
+
+
+.div-1{
+	background-color: #B7FFD5;
+}
+
+.div-2{
+	background-color: #8BFFFB;
+}
+
+.div-3{
+	background-color: #F1FFCA;
+}
+
+p{
+	padding: 10px;
+}
