@@ -1,0 +1,282 @@
+body{
+	padding: 0;
+	margin: 0;
+	color: #4D4E50;
+}
+*{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+}
+
+ a{
+ 	text-decoration: none;
+ 	color: #4D4E50;
+ }
+
+ $mrgins-centralized: 0px auto 0px auto;
+ $mrgins-centralized-with-top-50-px: 50px auto 0px auto;
+
+ @mixin text-1_8-center{
+ 	text-align: center;
+	font-size: 1.8em;
+ }
+
+/* --######### HEADER #####################################################-- */
+header{
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	background-color: #F3EAEF;
+	z-index: 9999;
+}
+
+.logo{
+	display: inline;
+	position: absolute;
+	top: 12px;
+	left: 25px;
+}
+
+nav{
+	position: absolute;
+	right: 30px;
+	top: 5px;
+}
+
+nav ul li{
+	display: inline-block;
+	margin-right: 30px;
+	font-size: 20px;
+	letter-spacing: 0.1em;
+	-moz-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    -webkit-transition: all .8s ease-in;
+    transition: all .5s ease-in;
+}
+
+nav ul li:hover {
+  color: white;
+  cursor: pointer;
+  color: #ADB2B8;
+  
+}
+
+
+/* --######### TOP PICTURE SECTION #####################################################-- */
+.top-pict{
+	position: relative;
+	top: 60px;
+	width: 100%;
+	height: 650px;
+	background-color: #28E1CE;
+}
+
+.top-pict img{
+	width: 100%;
+}
+
+/* --######### ABOUT SECTION #####################################################-- */
+.about{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 800px;
+	background-color: #67E1A0;
+}
+
+.my-photo{
+	position: relative;
+	margin: $mrgins-centralized-with-top-50-px;
+	width: 250px;
+	height: 250px;
+	background-color: grey;
+	-moz-border-radius: 50%;
+ -webkit-border-radius: 50%;
+border-radius: 50%; /* future proofing */
+-khtml-border-radius: 50%; /* for old Konqueror browsers */
+}
+
+
+.about-text{
+	position: relative;
+	width: 80%;
+	margin: $mrgins-centralized-with-top-50-px;
+}
+
+.about-text p{
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.about-social{
+	position: relative;
+	width: 80%;
+	height: auto;
+	margin: $mrgins-centralized;
+}
+
+.about-social .fa{
+	font-size: 3em;
+	text-align: center;
+	color: #4D4E50;
+}
+
+.social-icons{
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin: 50px 0 0 22%;
+}
+
+
+
+/* --######### SKILLS SECTION #####################################################-- */
+.skills{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 560px;
+	background-color: #E1CC6C;
+	overflow: auto;
+}
+
+.skills h1{
+    text-align: center;
+	font-size: 1.8em;
+}
+
+.skills p{	
+	width: 80%;
+	margin: $mrgins-centralized-with-top-50-px;
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.skills ul{
+	position: relative;
+	width: 80%;
+	margin: $mrgins-centralized-with-top-50-px;
+}
+
+.skills ul li{
+	list-style: none;
+	display: inline-block;
+	padding: 0 20px 0 0 ;
+}
+
+.skills ul li img{
+	width: 120px;
+}
+
+/* --######### EXPERIENCE SECTION #####################################################-- */
+.experience{
+	position: relative;
+	width: 100%;
+	height: 800px;
+	background-color: #CF9F8C;
+	overflow: auto;
+}
+
+.cv{
+	display: table;
+	margin: 100px auto 0px auto;
+}
+
+.cv .fa{
+	font-size: 4.5em;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.experience h4{
+	text-align: center;
+	font-size: 1.8em;
+}
+
+.cv a{
+	color: #4D4E50;
+}
+
+.experience-left, .experience-mid, .experience-right{
+	display: inline-block;
+	width: 33.33333%;
+	height: 300px;
+	background-color: #1FFFC3;
+	float: left;
+	margin-top: $mrgins-centralized-with-top-50-px;
+}
+
+.experience-mid{
+	background-color: #75FFDD;
+}
+
+.experience-right{
+	background-color: #92D5FF;
+}
+
+.experience-left p, .experience-mid p, .experience-right p {
+	padding: 0 10px 0 10px;
+}
+
+/* --######### PORTFOLIO SECTION #####################################################-- */
+.portfolio{
+	position: relative;
+	width: 100%;
+	background-color: #FFAEFB;
+	overflow: auto;
+}
+
+.portfolio h4{
+	text-align: center;
+	font-size: 1.8em;
+}
+
+.project-1, .project-2, .project-3, .project-4, .project-5, .project-6{
+	display: inline;
+	width: 33.333%;
+	height: 200px;
+	background-color: red;
+	float: left;
+	text-align: center;	
+}
+
+/* --######### CONTACT SECTION #####################################################-- */
+.contact{
+	position: relative;
+	width: 100%;
+	height: 700px;
+	background-color: #C4FFE5;
+	overflow: auto;
+}
+
+.contact h1, .contact h2 {
+	text-align: center;
+}
+
+.first-line{
+	margin-top: 50px;
+}
+
+.linked-contact-icon{
+	display: table;
+	margin: $mrgins-centralized;
+}
+
+/* --######### FOOTER #####################################################-- */
+footer{
+	position: relative;
+	width: 100%;
+	background-color: #F3EAEF;
+	overflow: auto;
+}
+
+footer p{
+	margin-left: 20px;
+}
+
+.github-footer{
+	float: right;
+	display: inline-block;
+	margin: -50px 20px 0 0;
+}
