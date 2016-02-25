@@ -29,14 +29,20 @@ var myLittleObject = {a:'Welcome', b:1, c:var anotherObject={}};
 ###Create a function that returns an empty object.
 
 function myFunction() {
-    var myEmptyObject = {};
+    return {};
 }
 
 
 ###Create a function that takes two parameters, puts them into a new array and returns that array.
 
 function myFunction(parameter1, parameter2) {
-
+	
+	var newArray = [];
+	newArray[0] = parameter1;
+	newArray[1] = parameter2;
+	return newArray;
 }
+
+console.log(myFunction('colour', 'red'))
     
 }
