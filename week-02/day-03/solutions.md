@@ -38,5 +38,4 @@ function myFunction() {
 function myFunction(parameter1, parameter2) {
 
 }
-    
-}
+
