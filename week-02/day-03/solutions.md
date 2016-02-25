@@ -23,7 +23,7 @@ myEmptyObject = {};
 	'b' with the value of 1
 	'c' with the value of an empty object.
 
-var myLittleObject = {a:'Welcome', b:1, c:var anotherObject={}};
+var myLittleObject = {a:'Welcome', b:1, c{}};
 
 
 ###Create a function that returns an empty object.
@@ -43,6 +43,7 @@ function myFunction(parameter1, parameter2) {
 	return newArray;
 }
 
+
 console.log(myFunction('colour', 'red'))
     
-}
+
