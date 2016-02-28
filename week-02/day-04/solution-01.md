@@ -16,7 +16,7 @@ function mergeArrays(param1, param2) {
 mergeArrays(array1, array2);'
 
 
-##But I think the idea is to use loop and push, which for some reason is not working in my example :(
+####But I think the idea is to use loop and push, which for some reason is not working in my example :(
 
 'var a = [1, 2, 3];
 var b = [4, 5, 6];
