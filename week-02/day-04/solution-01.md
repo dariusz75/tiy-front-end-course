@@ -2,7 +2,8 @@
 
 The quickest solution would be
 
-`var array1 = [1, 2, 3];
+`
+var array1 = [1, 2, 3];
 var array2 = [4, 5, 6];
 
 
@@ -14,21 +15,27 @@ function mergeArrays(param1, param2) {
 
 }
 
-mergeArrays(array1, array2);`
+mergeArrays(array1, array2);
+`
 
 
-####But I think the idea is to use loop and push, which for some reason is not working in my example :(
+####But I think the idea is to use loop and push, 
 
-`var a = [1, 2, 3];
-var b = [4, 5, 6];
+`
+array1 = [1, 2, 3];
+array2 = [4, 5, 6];
 
-function mergeArrays() {
-  
-for (var i=0; i < b.length; i++) {
-    
-  var c = a.push( b[i] );
-  console.log(c);
+
+function mergeArrays(para1, para2) {
+  var iterator;
+  for(iterator = 0; iterator < para2.length; iterator = iterator + 1) {
+    array1.push(array2[iterator]);
+  }
+    console.log(array1);
 }
-}
 
-mergeArrays();`
+
+mergeArrays(array1, array2);
+`
+
+#####example - http://jsbin.com/kotoxu/edit?js,console
