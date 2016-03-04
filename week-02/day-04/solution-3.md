@@ -5,6 +5,8 @@
 }`
 
 
-`var sum = function(a, b) {
+`
+(function (a, b) {
   return a + b;
-}`
+})();
+`

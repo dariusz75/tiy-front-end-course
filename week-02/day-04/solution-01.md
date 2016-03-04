@@ -19,4 +19,8 @@ function mergeArrays(para1, para2) {
 mergeArrays(array1, array2);
 `
 
+<<<<<<< HEAD
 #####example - http://jsbin.com/kotoxu/edit?js,console
+=======
+#####example - http://jsbin.com/kotoxu/edit?js,console
+>>>>>>> 9531d4d20ea9e99626e30fe5796dcea9be2ed6be
