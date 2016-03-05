@@ -1,23 +1,24 @@
 ###Write findInList function that takes 2 parameters: a string and a character and returns a number of times that character is repeated in that string.
 
-`
-myArray = [];
+`text = 'something with some o\'s';
+charact = 'o';
 
-function findInList(param1, param2) {
-  for (var i = 0; i < param1.length; i++ ){
-    if (param1[i] == param2) {
-      myArray.push(param2);
+function findInList(param1, param2){
+  var score = 0;
+  for(var i = 0; i < param1.length; i++) {
+    if(param1[i] === param2) {
+      
+      score = score+1;
+      
     }
-    
+   
   }
-  console.log('The character ' + param2 + ' has been repeted '  + myArray.length + ' times in ' + param1);
+   console.log(param1 + ' has ' + score + ' characters ' + charact);
 }
 
-findInList('dddd', 'd' );
+findInList(text, charact);`
 
-`
-
-####Example - http://jsbin.com/jipego/edit?js,console
+####Example - http://jsbin.com/buyufe/edit?js,console
 
 
     

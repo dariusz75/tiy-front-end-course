@@ -1,22 +1,15 @@
 ###Write squareList function that takes an array of numbers and returns a new array where each number is squared.
 
-`
-arraysOfNumbers = [2, 4, 1];
-squaredArray = [];
 
-function squareList() {
-  for(var i = 0; i < arraysOfNumbers.length; i++) {
-    squaredArray.push(arraysOfNumbers[i] * arraysOfNumbers[i])  ;
-    
+`var myArray = [2, 3, 4];
+function squareList(param) {
+  var secondArray = [];
+  var i;
+  for (i=0; i<param.length; i++){
+    secondArray[i] = param[i]*param[i];
   }
-  console.log(squaredArray);
+  console.log(secondArray);
 }
+squareList(myArray);`
 
-squareList();
-`
-
-####Example - http://jsbin.com/banijo/edit?js,console
-
-
-    
-
+####Example - http://jsbin.com/dowupoj/edit?js,console
