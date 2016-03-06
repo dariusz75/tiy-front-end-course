@@ -1,0 +1,29 @@
+#wrapper {
+  width: 80%;
+  background-color: #C7FFD7;
+  margin: 0 auto 0 auto;
+  overflow: auto;
+}
+
+#mainPicture {
+  width: 80%;
+  height: 470px;
+  background-color: #B8F5FF;
+  margin: 0 auto 0 auto;
+}
+
+.thumbnail1, .thumbnail2, .thumbnail3, .thumbnail4 {
+  width: 15%;
+  background-color: #EBC4FF;
+  margin-top: 30px;
+  margin-left: 8%;
+  float: left;
+}
+
+img {
+  width: 100%;
+}
+
+.pict1 {
+  border: red solid 2px;
+}
