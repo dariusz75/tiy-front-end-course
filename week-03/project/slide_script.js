@@ -17,41 +17,28 @@ window.onload = function() {
   pict1.setAttribute('src', 'images/image-01.jpg');
   mainPicture.appendChild(pict1); 
 
-/*
 
-var intervalID = window.setInterval(myCallback, 500);
+  var justTheName = setInterval(changePictures, 3000);
 
-function myCallback() {
-  // Your code here
-}
+  var galery = [ 
+    'images/image-01.jpg',               
+    'images/image-02.jpg',
+    'images/image-03.jpg',
+    'images/image-04.jpg',
+    ];
 
-*/
-
-
-
-
- var myVar = window.setInterval(changePictures, 3000);
-
+  var i = 0;
 
   function changePictures() {
+     i = i + 1;
 
-  var galery = [
-                'images/image-02.jpg',
-                'images/image-03.jpg',
-                'images/image-04.jpg',
-                ];
+     if (i === galery.length) {
+      i = 0;
+     }
 
-      for (i=0; i<galery.length; i++) {
-        pict1.setAttribute('src', galery[i]);
-        
-      }
+     pict1.setAttribute('src', galery[i]);
 
-    }
-
-  function stopPictures() {
-  clearInterval(myVar);
-}
-
+  }
 
 
   // ################## THUMBNAILS ################################
@@ -82,10 +69,5 @@ function myCallback() {
   var image4 = document.createElement('img');
   image4.setAttribute('src', 'images/image-04.jpg');
   thumbnail4.appendChild(image4);
-
-
-  
-  
-setTimeout.call(galery, 2000);
 
 }
