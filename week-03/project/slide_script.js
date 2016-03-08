@@ -40,6 +40,8 @@ window.onload = function() {
 
   }
 
+  
+
 
   // ################## THUMBNAILS ################################
   var thumbnail1 = document.createElement('div');
@@ -69,5 +71,6 @@ window.onload = function() {
   var image4 = document.createElement('img');
   image4.setAttribute('src', 'images/image-04.jpg');
   thumbnail4.appendChild(image4);
+
 
 }
