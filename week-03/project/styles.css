@@ -6,7 +6,7 @@
 }
 
 #mainPicture {
-  width: 80%;
+  width: 70%;
   height: 470px;
   background-color: #B8F5FF;
   margin: 0 auto 0 auto;
@@ -15,7 +15,7 @@
 .thumbnail1, .thumbnail2, .thumbnail3, .thumbnail4 {
   width: 15%;
   background-color: #EBC4FF;
-  margin-top: 30px;
+  margin-top: 50px;
   margin-left: 8%;
   float: left;
   
