@@ -25,42 +25,7 @@ window.onload = function() {
   mainPicture.appendChild(pict1); 
 
 
-  //var justTheName = setInterval(changePictures, 3000);
-
-  var galery = [ 
-    'images/image-01.jpg',               
-    'images/image-02.jpg',
-    'images/image-03.jpg',
-    'images/image-04.jpg',
-    ];
-
-  var i = 0;
-
-  function changePictures() {
-     i = i + 1;
-
-     if (i === galery.length) {
-      i = 0;
-     }
-
-     pict1.setAttribute('src', galery[i]);
-
-  }
-
-  function changePicturesOpposite() {
-     i = i - 1;
-
-     if (i === -1) {
-      i = galery.length -1;
-     }
-
-     pict1.setAttribute('src', galery[i]);
-     console.log(galery[i]);
-
-  }
-
-  buttonRight.addEventListener("click", changePictures);
-  buttonLeft.addEventListener("click", changePicturesOpposite);
+  console.log(pict1.hesAttribute = 'src');
 
   // ################## THUMBNAILS ################################
   var thumbnail1 = document.createElement('div');
@@ -91,5 +56,69 @@ window.onload = function() {
   image4.setAttribute('src', 'images/image-04.jpg');
   thumbnail4.appendChild(image4);
 
+  var thumbnails = [
+    thumbnail1,
+    thumbnail2,
+    thumbnail3,
+    thumbnail4,
+  ]
+
+  var classes = [
+    'thumbnail1',
+    'thumbnail2',
+    'thumbnail3',
+    'thumbnail4',
+  ];
+
+  var classesB = [
+    'thumbnail1-border',
+    'thumbnail2-border',
+    'thumbnail3-border',
+    'thumbnail4-border',
+  ];
+
+  var galery = [ 
+    'images/image-01.jpg',               
+    'images/image-02.jpg',
+    'images/image-03.jpg',
+    'images/image-04.jpg',
+    ];
+
+  var i = 0;
+
+  function changePictures() {
+     i = i + 1;
+
+     if (i === galery.length) {
+      i = 0;
+     }
+
+     pict1.setAttribute('src', galery[i]); 
+     thumbnails[i].setAttribute('class', classesB[i]);
+     thumbnails[i-1].setAttribute('class', classes[i]);
+  }
+
+  function changePicturesOpposite() {
+     i = i - 1;
+
+     if (i === -1) {
+      i = galery.length -1;
+     }
+
+     pict1.setAttribute('src', galery[i]);
+
+     thumbnails[i].setAttribute('class', classesB[i]);
+     thumbnails[i+1].setAttribute('class', classes[i]);
+    
+     console.log(galery[i]);
+
+  }
+
+  
+
+  buttonRight.addEventListener("click", changePictures);
+  buttonLeft.addEventListener("click", changePicturesOpposite);
+
+  
 
 }
