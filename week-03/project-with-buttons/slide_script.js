@@ -29,28 +29,28 @@ window.onload = function() {
 
   // ################## THUMBNAILS ################################
   var thumbnail1 = document.createElement('div');
-  thumbnail1.setAttribute('class', 'thumbnail1');
+  thumbnail1.setAttribute('class', 'thumbnail-border');
   wrapper.appendChild(thumbnail1); 
   var image1 = document.createElement('img');
   image1.setAttribute('src', 'images/image-01.jpg');
   thumbnail1.appendChild(image1);
 
   var thumbnail2 = document.createElement('div');
-  thumbnail2.setAttribute('class', 'thumbnail2');
+  thumbnail2.setAttribute('class', 'thumbnail');
   wrapper.appendChild(thumbnail2); 
   var image2 = document.createElement('img');
   image2.setAttribute('src', 'images/image-02.jpg');
   thumbnail2.appendChild(image2);
 
   var thumbnail3 = document.createElement('div');
-  thumbnail3.setAttribute('class', 'thumbnail3');
+  thumbnail3.setAttribute('class', 'thumbnail');
   wrapper.appendChild(thumbnail3); 
   var image3 = document.createElement('img');
   image3.setAttribute('src', 'images/image-03.jpg');
   thumbnail3.appendChild(image3);
 
   var thumbnail4 = document.createElement('div');
-  thumbnail4.setAttribute('class', 'thumbnail4');
+  thumbnail4.setAttribute('class', 'thumbnail');
   wrapper.appendChild(thumbnail4); 
   var image4 = document.createElement('img');
   image4.setAttribute('src', 'images/image-04.jpg');
@@ -63,19 +63,9 @@ window.onload = function() {
     thumbnail4,
   ]
 
-  var classes = [
-    'thumbnail1',
-    'thumbnail2',
-    'thumbnail3',
-    'thumbnail4',
-  ];
+ 
 
-  var classesB = [
-    'thumbnail1-border',
-    'thumbnail2-border',
-    'thumbnail3-border',
-    'thumbnail4-border',
-  ];
+  
 
   var galery = [ 
     'images/image-01.jpg',               
@@ -94,8 +84,9 @@ window.onload = function() {
      }
 
      pict1.setAttribute('src', galery[i]); 
-     thumbnails[i].setAttribute('class', classesB[i]);
-     thumbnails[i-1].setAttribute('class', classes[i]);
+     thumbnails[i].setAttribute('class', 'thumbnail-border');
+     thumbnails[i-1].setAttribute('class', 'thumbnail');
+     
   }
 
   function changePicturesOpposite() {
@@ -107,8 +98,8 @@ window.onload = function() {
 
      pict1.setAttribute('src', galery[i]);
 
-     thumbnails[i].setAttribute('class', classesB[i]);
-     thumbnails[i+1].setAttribute('class', classes[i]);
+     thumbnails[i].setAttribute('class', 'thumbnail-border');
+     thumbnails[i+1].setAttribute('class', 'thumbnail');
     
      console.log(galery[i]);
 

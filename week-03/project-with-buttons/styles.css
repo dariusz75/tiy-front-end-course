@@ -32,7 +32,7 @@
   margin: 0 auto 0 auto;
 }
 
-.thumbnail1, .thumbnail2, .thumbnail3, .thumbnail4 {
+.thumbnail {
   width: 15%;
   background-color: #EBC4FF;
   margin-top: 50px;
@@ -41,7 +41,7 @@
   
 }
 
-.thumbnail1-border, .thumbnail2-border, .thumbnail3-border, .thumbnail4-border {
+.thumbnail-border {
   width: 15%;
   background-color: #EBC4FF;
   margin-top: 50px;
