@@ -1,26 +1,3 @@
 ###Write a function mergeArrays that takes two arrays as parameters and returns a new array that is made of two arrays merged together.
 
-
-
-`
-array1 = [1, 2, 3];
-array2 = [4, 5, 6];
-
-
-function mergeArrays(para1, para2) {
-  var iterator;
-  for(iterator = 0; iterator < para2.length; iterator = iterator + 1) {
-    array1.push(array2[iterator]);
-  }
-    console.log(array1);
-}
-
-
-mergeArrays(array1, array2);
-`
-
-<<<<<<< HEAD
-#####example - http://jsbin.com/kotoxu/edit?js,console
-=======
-#####example - http://jsbin.com/kotoxu/edit?js,console
->>>>>>> 9531d4d20ea9e99626e30fe5796dcea9be2ed6be
+#####Solution - http://jsbin.com/tugatu/edit?js,console
