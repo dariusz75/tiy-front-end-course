@@ -2,7 +2,7 @@ window.onload = function() {
 
 var wrapper = document.createElement('div');
 wrapper.className = "wrapper";
-document.body.appendChild(wrapper);
+document.querySelector('body').appendChild(wrapper);
 
 var title = document.createElement('div');
 title.className = "title";
@@ -13,15 +13,13 @@ var container1 = document.createElement('div');
 container1.className = "flex-container";
 wrapper.appendChild(container1);
 
-var names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+var names = ['<p>Monday</p>', '<p>Tuesday</p>', '<p>Wednesday</p>', '<p>Thursday</p>', '<p>Friday</p>', '<p>Saturday</p>', '<p>Sunday</p>'];
 
 
 
 for(i=0; i<7; i++) {
     var dayNameBox = document.createElement('div');
-    var p = document.createElement('p');
     dayNameBox.className = "daynames";
-    dayNameBox.appendChild(p);
     container1.appendChild(dayNameBox);
 }
 
@@ -46,7 +44,7 @@ for(x=0; x<42; x++) {
 
 for(var i=1; i<32; i++){
 
-    document.getElementsByClassName('days')[i].textContent = i;
+    document.getElementsByClassName('days')[i].innerHTML = '<p>'+i+'</p>';
 }
 
 var today = new Date().getDate();
