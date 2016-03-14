@@ -30,9 +30,22 @@ span {
   font-weight: 400;
 }
 
+  .flex-container {
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+      flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+}
+
 .daynames{
-  width: 13%;
-  float: left;
+  -webkit-flex: 30;
+  -ms-flex: 30;
+  flex: 30;
   margin: 5px;
   background-color: #E993EA;
   text-align: center;
@@ -43,9 +56,11 @@ span {
 
 
 .days{
-  width: 13%;
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
   height: 60px;
-  float: left;
+  padding: 5px 0 0 1%;
   margin: 5px;
   background-color: #D7EAE1;
   font-size: 1.5em;
@@ -53,24 +68,34 @@ span {
 }
 
 .hiden-text{
-  width: 13%;
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
   height: 60px;
-  float: left;
+  padding: 5px 0 0 1%;
   margin: 5px;
   background-color: #D7EAE1;
-  
   font-size: 1.5em;
   overflow: hidden;
 }
 
 
 .border{
-  width: 13%;
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
   height: 60px;
-  float: left;
+  padding: 5px 0 0 1%;
   margin: 5px;
   background-color: #EA93A7;
   font-size: 1.5em;
   overflow: hidden;
 }
 
+.dupa{
+  background-color: red;
+}
+
+.blada{
+  background-color: yellow;
+}
