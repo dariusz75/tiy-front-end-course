@@ -38,6 +38,26 @@ for(x=0; x<42; x++) {
     dayBox.className = "days";
     dayBox.innerHTML = '<p></p>';
     container2.appendChild(dayBox);
+
+
+    dayBox.onclick=function(){
+    this.className='days-crossed'; 
+    console.log('test-ok');
+    }
+    
+
+    dayBox.addEventListener("click", modalWindow, false);
+
+    function modalWindow() {
+    var popup = document.createElement('div');
+    popup.innerHTML = '<div class="modal"><form><textarea  name="textarea" rows="10" cols="50">Write something here</textarea><button id="submit">Submit</button></form></div>'
+    document.querySelector('body').appendChild(popup);
+    }
+    
+    
+
+
+
 }
 
 
