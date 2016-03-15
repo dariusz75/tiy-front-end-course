@@ -40,8 +40,8 @@ for(x=0; x<42; x++) {
     container2.appendChild(dayBox);
 
 
-    dayBox.onclick=function(){
-    this.className='days-crossed'; 
+    dayBox.onclick=function(){    
+    this.className='days-highlight'; 
     console.log('test-ok');
     }
     
