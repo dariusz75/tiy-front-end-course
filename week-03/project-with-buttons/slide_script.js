@@ -1,4 +1,4 @@
-window.onload = function() {
+$(document).ready(function () {
 
 	// creating wrapper
   var wrapper = document.createElement('div');
@@ -112,4 +112,4 @@ window.onload = function() {
 
   
 
-}
+});
