@@ -44,7 +44,7 @@ var image4 = $('<img>').attr('src', 'images/image-04.jpg').appendTo(thumbnail4);
 
   var i = 0;
 
-  function changePictures() {
+  function changePicturesRight() {
      i = i + 1;
 
      if (i === galery.length) {
@@ -57,7 +57,7 @@ var image4 = $('<img>').attr('src', 'images/image-04.jpg').appendTo(thumbnail4);
      
   }
 
-  function changePicturesOpposite() {
+  function changePicturesLeft() {
      i = i - 1;
 
      if (i === -1) {
@@ -69,15 +69,19 @@ var image4 = $('<img>').attr('src', 'images/image-04.jpg').appendTo(thumbnail4);
      thumbnails[i].setAttribute('class', 'thumbnail-border');
      thumbnails[i+1].setAttribute('class', 'thumbnail');
     
-     console.log(galery[i]);
+     
 
   }
 
   
+buttonRight.addEventListener('click', function(){
+    changePicturesRight();
+    
+});
 
-  buttonRight.addEventListener("click", changePictures);
-  buttonLeft.addEventListener("click", changePicturesOpposite);
-
+buttonLeft.addEventListener('click', function(){
+    changePicturesLeft();
+});
   
 
 });
