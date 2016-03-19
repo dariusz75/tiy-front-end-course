@@ -81,7 +81,7 @@ window.onload = function() {
 
      if (i === galery.length) {
       i = 0;
-     }
+     };
 
      pict1.setAttribute('src', galery[i]); 
      thumbnails[i].setAttribute('class', 'thumbnail-border');
