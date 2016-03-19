@@ -1,6 +1,6 @@
 window.onload = function() {
 
-	// creating wrapper
+  // creating wrapper
   var wrapper = document.createElement('div');
   wrapper.setAttribute('id', 'wrapper');
   document.body.appendChild(wrapper); 
@@ -29,7 +29,7 @@ window.onload = function() {
 
   // ################## THUMBNAILS ################################
   var thumbnail1 = document.createElement('div');
-  thumbnail1.setAttribute('class', 'thumbnail-border');
+  thumbnail1.setAttribute('class', 'thumbnail');
   wrapper.appendChild(thumbnail1); 
   var image1 = document.createElement('img');
   image1.setAttribute('src', 'images/image-01.jpg');
@@ -61,7 +61,7 @@ window.onload = function() {
     thumbnail2,
     thumbnail3,
     thumbnail4,
-  ]
+  ];
 
  
 
@@ -76,7 +76,7 @@ window.onload = function() {
 
   var i = 0;
 
-  function changePictures() {
+  function changePicturesRight() {
      i = i + 1;
 
      if (i === galery.length) {
@@ -84,12 +84,29 @@ window.onload = function() {
      };
 
      pict1.setAttribute('src', galery[i]); 
-     thumbnails[i].setAttribute('class', 'thumbnail-border');
-     thumbnails[i-1].setAttribute('class', 'thumbnail');
-     
+
+         
+
   }
 
-  function changePicturesOpposite() {
+
+  function changeThumbnails() {
+     i = i + 1;
+
+     if (i === galery.length) {
+      i = 0;
+     };
+
+     
+     
+     thumbnails[i].setAttribute('class', 'thumbnail-border');
+     thumbnails[i-1].setAttribute('class', 'thumbnail');     
+
+  }
+
+
+
+  function changePicturesLeft() {
      i = i - 1;
 
      if (i === -1) {
@@ -105,10 +122,15 @@ window.onload = function() {
 
   }
 
-  
+buttonRight.addEventListener('click', function(){
+    changePicturesRight();
+    
+});
 
-  buttonRight.addEventListener("click", changePictures);
-  buttonLeft.addEventListener("click", changePicturesOpposite);
+buttonLeft.addEventListener('click', function(){
+    changePicturesLeft();
+});
+  
 
   
 
