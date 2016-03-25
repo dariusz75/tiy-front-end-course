@@ -8,8 +8,10 @@
 Write a function which returns the value of the 1st name by calling this function:
 `data.getFirst().getName()`
 
-#####http://jsbin.com/sitawe/edit?js,console
+#####First solution. http://jsbin.com/sitawe/edit?js,console
 
-#####http://jsbin.com/manetud/1/edit?js
+#####Solution with 'this'. http://jsbin.com/manetud/1/edit?js
 
-#####http://jsbin.com/cunomo/edit?js,console
+#####Solution for nth model. http://jsbin.com/hicile/edit?js,console
+
+#####Instead of number, getModel accepts a function as a parameter. That function knows which object to return from models array.
