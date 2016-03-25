@@ -4,3 +4,4 @@ sortArray([2, 12, 7]); // returns: [2, 7, 12]
 
 
 #####Solution - http://jsbin.com/tupegok/edit?js,console
+#####Updated - https://repl.it/Bz5s
