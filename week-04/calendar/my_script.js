@@ -50,7 +50,7 @@ for(x=0; x<42; x++) {
 
     function modalWindow() {
     var popup = document.createElement('div');
-    popup.innerHTML = '<div class="modal"><form><textarea  name="textarea" rows="10" cols="50">Write something here</textarea><button id="submit">Submit</button></form></div>'
+    popup.innerHTML = '<div class="modal"><form><textarea  name="textarea" rows="10" cols="50">Write something here</textarea><button id="submit">Submit</button><button id="reset">Reset</button></form></div>'
     document.querySelector('body').appendChild(popup);
     }
     
