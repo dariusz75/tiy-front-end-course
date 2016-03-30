@@ -75,6 +75,7 @@ $(document).ready(function () {
   $(".days").on('click', function() {
       $(this).css('background-color', '#FF4E42');
       $('<div class="modal"><form><textarea  name="textarea" rows="10" cols="50">Write something here</textarea><button class="submit" value="Submit">Submit</button><button type="reset" value="Reset">Reset</button></form></div>').appendTo($wrapper);
+    
   });
 
 
