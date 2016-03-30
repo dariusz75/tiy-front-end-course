@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Prototype</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
+</head>
+<body>
+<div class="container">
+<h1 style=" margin-top: 50px ">Create your marker</h1>
+<div class = 'row'>
+	<div class="col-xs-12 col-md-6">
+		<form>
+		  <div class="form-group">
+		    <label for="latitudeInput">Latitude</label>
+		    <input type="number" class="form-control" id="latitudeInput" placeholder="Latitude" data-js-latitude-input>
+		  </div>
+
+		  <div class="form-group">
+		    <label for="longitudeInput">Longitude</label>
+		    <input type="number" class="form-control" id="longitudeInput" placeholder="Longitude" data-js-longtitude-input>
+		  </div>
+		 
+
+		  <button type="submit" class="btn btn-default" id="submit-marker">Create Marker</button>
+		</form>
+
+
+			</div>
+	<div class="col-xs-12 col-md-6">
+		<div id="map" style=" width: 100%; height: 450px "></div>
+	</div>
+</div>
+</div>
+
+<script src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
+<script >
+var markers = [];
+	var map;
+	
+
+  function initMap() {
+  	var position = {
+			lat: 52.15,
+			lng: 21.00
+			};
+
+    map = new google.maps.Map(document.getElementById('map'), {
+    center: position,
+    zoom: 1
+    });
+      
+    var marker = new google.maps.Marker({
+  		position: position,
+  		map: map,
+		});
+	}
+
+	function removeMarkerFromModel(lat, lng) {
+		for (var i =0; i > markers.length; i++) {
+			if (markers[i].latLng.lat() === lat && markers[i].latLng.lng() === lng ) {
+	  			markers.splice(iterator, 1);  			
+	  		}
+	  	}
+	  }
+
+	function getMarkerFromModel(lat, lng) {
+		for (var i =0; i < markers.length; i++) {
+			if (markers[i].position.lat() === lat && markers[i].position.lng() === lng ) {
+	  			return markers[i];
+	  		} 
+	  	}
+	  	return null;
+	  }
+
+	$('#submit-marker').on('click', function(event) {
+		event.preventDefault();
+
+		var latitude = $('[data-js-latitude-input]').val();
+		var longtitude = $('[data-js-longtitude-input]').val();
+
+		var marker = new google.maps.Marker({
+			position: {
+	  		lat: parseFloat(latitude),
+	  		lng: parseFloat(longtitude)
+	  	},
+	  	map:map
+	  });
+
+		var descriptionBox = $('<div class="panel panel-default"><div class="panel heading"><h3 class="panel-title">Panel title</h3></div><div class="panel-body">Panel content</div><button type="submit" class="btn btn-default" id="remove-marker">Remove Marker</button></div>');
+
+		marker.addListener('click', function(event){
+			var lat = event.latLng.lat(); 
+			var lng = event.latLng.lng();
+			removeMarkerFromModel(lat, lng);
+    	getMarkerFromModel(lat, lng).setMap(null);
+		});	
+
+		markers.push(marker);
+
+		if(latitude  && longtitude ) {
+			$('[id="submit-marker"]').after(descriptionBox);
+		}
+		
+		
+	});
+
+//https://repl.it/CASp/1
+//https://repl.it/CAgN/0
+  </script>
+  
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-ZhO-a6UjxRv5YmUbP-v3Ra9ZF9ysFAs&callback=initMap"
+    async defer></script>
+</body>
+</html>
