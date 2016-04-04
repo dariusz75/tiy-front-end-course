@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Google Map Markers</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  
+<title>Google Map Markers</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
 
 <script id="box-template" type="text/x-handlebars-template">
   <div data-box-id="{{boxId}}" class="panel panel-default info-panel">
-  <div class="panel heading">
+    <div class="panel heading">
       <h3 class="panel-title">Panel title</h3>
     </div>
     <div class="panel-body">Do you realy want to remove this marker?</div>
@@ -21,8 +20,8 @@
 </script>
 
 </head>
-<body>
 
+<body>
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-sm-4 col-md-4">
@@ -44,38 +43,33 @@
           </div>
 
           <div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-  Dropdown
-  <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">0</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">6</a></li>
-    <li><a href="#">7</a></li>
-    <li><a href="#">8</a></li>
-    <li><a href="#">9</a></li>
-    <li><a href="#">10</a></li>
-  </ul>
-</div>
-
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Dropdown<span class="caret"></span>
+            </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">0</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">7</a></li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a></li>
+                <li><a href="#">10</a></li>
+              </ul>
+            </div>
           <button type="submit" class="btn btn-default create-button">Create Marker</button>
-
         </form>
-
-
       </div>
+      
       <div class="col-sm-12 col-sm-8 col-md-8">
-        
-          <label for="rating"><h4>Rating range :</h4></label>
-          <input type="text" id="rating" readonly style="border:0; color:#f6931f; font-weight:bold;">
+        <label for="rating"><h4>Rating range :</h4></label>
+        <input type="text" id="rating" readonly style="border:0; color:#f6931f; font-weight:bold;">
         
         <div id="slider-range"></div>
-        <br></br>
+        
         <div data-js-map class="map"></div>
       </div>
     </div>
@@ -113,7 +107,6 @@
       map: map
     });
     marker.addListener('click', hanldeMarkerClickEvent);
-    console.log("break point");
     return marker;
   }
   function createPositionBox(latitude,longitude){
