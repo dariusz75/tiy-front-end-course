@@ -1,220 +1,177 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
   <title>Google Map Markers</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="styles.css">
   
-  
-  <script id="box-template" type="text/x-handlebars-template">
-  	<div data-box-id="{{boxId}}" class="panel panel-default info-panel">
-  		<div class="panel heading">
-  			<h3 class="panel-title">Lovely marker control panel</h3>
-  		</div>
-  		<div class="panel-body"><!--Panel content--></div>
-  		
-  		<button class="btn btn-default remove-marker" data-remove-marker-button>Remove Marker</button>
-  	</div>
-	</script>
+
+<script id="box-template" type="text/x-handlebars-template">
+  <div data-box-id="{{boxId}}" class="panel panel-default info-panel">
+  <div class="panel heading">
+      <h3 class="panel-title">Panel title</h3>
+    </div>
+    <div class="panel-body">Do you realy want to remove this marker?</div>
+    <button class="btn btn-default" data-remove-marker-button>Remove Marker</button>
+  </div>
+</script>
 
 </head>
 <body>
-<div class="container">
-	
-<h1 >Create your marker</h1>
-<div class="row">
-	<div class="col-xs-12 col-md-4" data-js-box-container>
-	
-		<form>
-		  <div class="form-group">
-		    <label for="latitudeInput">Latitude</label>
-		    <input type="number" class="form-control" id="latitudeInput" placeholder="Latitude" data-js-latitude-input>
-		  </div>
 
-		  <div class="form-group">
-		    <label for="longitudeInput">Longitude</label>
-		    <input type="number" class="form-control" id="longitudeInput" placeholder="Longitude" data-js-longitude-input>
-		  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-sm-4 col-md-4">
+        <h4> Create your markers </h4>
+        <form>
+          <div class="form-group">
+            <label for="latitude">Latitude</label>
+            <input type="number" class="form-control" id="latitude" placeholder="Type your latitude" required data-js-latitude-input>
+          </div>
 
-		  <button type="submit" class="btn btn-default" id="submit-marker">Create Marker</button>
-		</form>
-		<h5>Rate the marker</h5>
-		<select class="form-control rate-window">
-  			<option>1</option>
-  			<option>2</option>
-  			<option>3</option>
-  			<option>4</option>
-  			<option>5</option>
-  			<option>6</option>
-  			<option>7</option>
-  			<option>8</option>
-  			<option>9</option>
-  			<option>10</option>
-			</select>
-		
-	</div>
+          <div class="form-group">
+            <label for="longitude">Longitude</label>
+            <input type="number" class="form-control" id="longitude" placeholder="Type your longitude" required data-js-longitude-input>
+          </div>
 
-	<div class="col-xs-12 col-md-8">
-	<p>
-	  	<label for="amount">Rate range:</label>
-	  	<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-		</p>
- 
-	<div id="slider-range"></div>
-		<div id="map" style=" width: 100%; height: 450px "></div>
-	</div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" rows="5" id="description" data-js-description></textarea>
+          </div>
+
+          <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  Dropdown
+  <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">0</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li><a href="#">8</a></li>
+    <li><a href="#">9</a></li>
+    <li><a href="#">10</a></li>
+  </ul>
 </div>
-</div>
+
+          <button type="submit" class="btn btn-default create-button">Create Marker</button>
+
+        </form>
+
+
+      </div>
+      <div class="col-sm-12 col-sm-8 col-md-8">
+        
+          <label for="rating"><h4>Rating range :</h4></label>
+          <input type="text" id="rating" readonly style="border:0; color:#f6931f; font-weight:bold;">
+        
+        <div id="slider-range"></div>
+        <br></br>
+        <div data-js-map class="map"></div>
+      </div>
+    </div>
+  </div>
 
 <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
+<!-- /// Functions dealing with Data Model already exported to a .js file /// --> 
+
+<script src="./model.js"></script>
+
 <script>
+  var map;
+/// Functions dealing with UI > to be exported to a .js file ///
+  function createMap() {
+    map = new google.maps.Map(document.querySelector('[data-js-map]'), {
+      center: {
+        lat: 51.50,
+        lng: 0.12
+      },
+      zoom: 1
+    });
+  }
+  
+  function removeMarkerFromTheMap(marker) {
+    marker.setMap(null);
+  }
+  function createMarkerOnTheMap(map, latitude, longitude) {
+    var marker = new google.maps.Marker({
+      position: {
+        lat: parseFloat(latitude),
+        lng: parseFloat(longitude)
+      },
+      map: map
+    });
+    marker.addListener('click', hanldeMarkerClickEvent);
+    console.log("break point");
+    return marker;
+  }
+  function createPositionBox(latitude,longitude){
+    var boxId = Model.createMarkerId(latitude,longitude);
+    var source = $("#box-template").html();
+    var template = Handlebars.compile(source);
+    var context = {
+      boxId: boxId
+    };
+    var html = template(context);
+  $('form').after(html);
+  }
+  function removeBox(boxId) {
+  $('[data-box-id="' + boxId + '"]').remove();
+  }
   $(function() {
     $( "#slider-range" ).slider({
       range: true,
       min: 0,
       max: 10,
-      values: [ 75, 300 ],
+      values: [ 0, 10 ],
       slide: function( event, ui ) {
-        $( "#amount" ).val(   ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+        $( "#rating" ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
       }
     });
-    $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) +
+    $( "#rating" ).val($( "#slider-range" ).slider( "values", 0 ) +
       " - " + $( "#slider-range" ).slider( "values", 1 ) );
   });
-  </script>
-
-<script >
-var markers = [];
-	var map;
-	
-
-  function initMap() {
-  	var position = {
-			lat: 52.15,
-			lng: 21.00
-			};
-
-    map = new google.maps.Map(document.getElementById('map'), {
-    center: position,
-    zoom: 1
+/// Functions dealing with both Data Model and User Interface ///
+  function hanldeMarkerClickEvent(clickEvent) {
+    var latitude = clickEvent.latLng.lat();
+    var longitude = clickEvent.latLng.lng();
+    var markerId = Model.createMarkerId(latitude, longitude);
+    var boxId = Model.createMarkerId(latitude,longitude);
+    var marker = Model.getMarkerById(markerId); 
+    removeMarkerFromTheMap(marker.marker);
+    Model.removeMarkerFromModel(markerId);
+    removeBox(boxId);
+  }
+  $('form').on('submit', function handleSubmitEvent(submitEvent) {
+    submitEvent.preventDefault();
+    var latitude = $('[data-js-latitude-input]').val();
+    var longitude = $('[data-js-longitude-input]').val();
+    var description = $('[data-js-description]').val();
+    var googleMapsMarker = createMarkerOnTheMap(map, latitude, longitude);
+    var markerId = Model.createMarkerId(latitude, longitude);
+    createPositionBox(latitude,longitude);
+    Model.addMarkerToTheModel(markerId, {
+      latitude: latitude,
+      longitude: longitude,
+      description: description,
+      marker: googleMapsMarker
     });
-      
-    var marker = new google.maps.Marker({
-  		position: position,
-  		map: map,
-		});
-	}
+  });
+</script>
 
-	function generateIdForMarkers(lat, lng) {
-		return lat.toString() + lng.toString();	
-	}
-
-	function removeMarkerFromModel(lat, lng) {
-		for (var i =0; i > markers.length; i++) {
-			if (markers[i].latLng.lat() === lat && markers[i].latLng.lng() === lng ) {
-	  			markers.splice(iterator, 1);  			
-	  		}
-	  	}
-	  }
-
-	function getMarkerFromModel(lat, lng) {
-		for (var i =0; i < markers.length; i++) {
-			if (markers[i].position.lat() === lat && markers[i].position.lng() === lng ) {
-	  			return markers[i];
-	  		} 
-	  	}
-	  	return null;
-	  }
-
-	  function removeMarkerFromMap(lat, lng) {
-	  	getMarkerFromModel(lat, lng).setMap(null);
-	  }
-
-	  function createBox(latitude, longitude) {
-	  	var boxId = generateIdForMarkers(latitude, longitude);
-			var source = $('#box-template').html();
-			var template = Handlebars.compile(source);
-			var context = {
-				boxId: boxId
-			};
-
-			var html = template(context);
-			$('form').after(html);
-	  }
-
-	  function removeBox(boxId) {
-	  	$('[data-box-id=" ' + boxId + ' "]').remove();
-	  }
-
-	  function createMarker(latitude, longitude, map) {
-	  	var marker = new google.maps.Marker({
-				position: {
-		  		lat: parseFloat(latitude),
-		  		lng: parseFloat(longitude)
-		  	},
-		  	map:map
-
-		  });
-
-			marker.addListener('click', function handleMarkerClick(event){
-				var lat = event.latLng.lat(); 
-				var lng = event.latLng.lng();
-				var boxId = generateIdForMarkers(lat, lng);
-				removeMarkerFromModel(lat, lng);
-				removeMarkerFromMap(lat, lng);
-				removeBox(boxId);
-			});	
-
-			return marker;
-	  }
-
-	  $('[data-js-box-container]').on('click', function handleRemoveMarkerButtonClick(event) {
-	  	removeMarkerFromModel(lat, lng); //fix it!!!!
-			removeMarkerFromMap(lat, lng);
-			removeBox(boxId);
-	  });
-
-	  var $createMarkerButton = $('[id="submit-marker"]');
-		$createMarkerButton.on('click', function handleCreateMarkerButtonClick(event) {
-			event.preventDefault();
-
-			var latitude = $('[data-js-latitude-input]').val();
-			var longitude = $('[data-js-longitude-input]').val();
-
-			if (!latitude || !longitude) {
-				return; //stops the handleCreateMarkerButtonClick from executing
-			}
-
-			createBox(latitude, longitude);
-
-			var marker = createMarker(latitude, longitude, map);
-			var markerData = {
-				id: generateIdForMarkers(latitude, longitude),
-				latitude: latitude,
-				longitude: longitude,
-				marker: marker
-			};
-
-
-			markers.push(markerData);
-		
-
-					
-	});
-
-	
-//https://repl.it/CASp/1
-//https://repl.it/CAgN/0
-  </script>
-  
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-ZhO-a6UjxRv5YmUbP-v3Ra9ZF9ysFAs&callback=initMap"
-    async defer></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbrNuw5MmLjPe3qSkFQkd90g9Y-rj2tZQ&callback=createMap" async defer></script>
 </body>
 </html>
