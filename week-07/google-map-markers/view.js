@@ -1,5 +1,27 @@
+var View = (function view() {
+
  var map;
 /// Functions dealing with UI > to be exported to a .js file ///
+  function getMap() {
+    return map;
+  }
+
+  function getLatitude(mapEvent) {
+    return mapEvent.latLng.lat();
+  }
+
+  function getLongitude(mapEvent) {
+    return mapEvent.latLng.lng();
+  }
+
+  function getLatitudeFromInputElement() {
+    return $('[data-js-latitude-input]').val();
+  }
+
+  function getLongitudeFromInputElement() {
+    return $('[data-js-longitude-input]').val();
+  }
+
   function createMap() {
     map = new google.maps.Map(document.querySelector('[data-js-map]'), {
       center: {
@@ -10,11 +32,15 @@
     });
   }
   
+  function listenToSubmitEventOnFormElement(handleEvent) {
+    $('form').on('submit', handleEvent);
+  }
   
   function removeMarkerFromTheMap(marker) {
     marker.setMap(null);
   }
-  function createMarkerOnTheMap(map, latitude, longitude) {
+
+  function createMarkerOnTheMap(map, latitude, longitude, hanldeMarkerClickEvent) {
     var marker = new google.maps.Marker({
       position: {
         lat: parseFloat(latitude),
@@ -25,19 +51,22 @@
     marker.addListener('click', hanldeMarkerClickEvent);
     return marker;
   }
-  function createPositionBox(latitude,longitude){
-    var boxId = Model.createMarkerId(latitude,longitude);
+
+
+  function createPositionBoxElement(latitude, longitude, boxId){
     var source = $("#box-template").html();
     var template = Handlebars.compile(source);
     var context = {
       boxId: boxId
     };
     var html = template(context);
-  $('form').after(html);
+    $('form').after(html);
   }
+
   function removeBox(boxId) {
   $('[data-box-id="' + boxId + '"]').remove();
   }
+
   $(function() {
     $( "#slider-range" ).slider({
       range: true,
@@ -52,28 +81,21 @@
       " - " + $( "#slider-range" ).slider( "values", 1 ) );
   });
 
-  function hanldeMarkerClickEvent(clickEvent) {
-    var latitude = clickEvent.latLng.lat();
-    var longitude = clickEvent.latLng.lng();
-    var markerId = Model.createMarkerId(latitude, longitude);
-    var boxId = Model.createMarkerId(latitude,longitude);
-    var marker = Model.getMarkerById(markerId); 
-    removeMarkerFromTheMap(marker.marker);
-    Model.removeMarkerFromModel(markerId);
-    removeBox(boxId);
-  }
-  $('form').on('submit', function handleSubmitEvent(submitEvent) {
-    submitEvent.preventDefault();
-    var latitude = $('[data-js-latitude-input]').val();
-    var longitude = $('[data-js-longitude-input]').val();
-    var description = $('[data-js-description]').val();
-    var googleMapsMarker = createMarkerOnTheMap(map, latitude, longitude);
-    var markerId = Model.createMarkerId(latitude, longitude);
-    createPositionBox(latitude,longitude);
-    Model.addMarkerToTheModel(markerId, {
-      latitude: latitude,
-      longitude: longitude,
-      description: description,
-      marker: googleMapsMarker
-    });
-  });
+  
+
+  return {
+    createMap: createMap,
+    removeMarkerFromTheMap: removeMarkerFromTheMap,
+    createMarkerOnTheMap: createMarkerOnTheMap,
+    createPositionBoxElement: createPositionBoxElement,
+    removeBox: removeBox,
+    getMap: getMap,
+    getLatitude: getLatitude,
+    getLongitude: getLongitude,
+    getLatitudeFromInputElement: getLatitudeFromInputElement,
+    getLongitudeFromInputElement: getLongitudeFromInputElement,
+    listenToSubmitEventOnFormElement: listenToSubmitEventOnFormElement
+  };
+
+
+})();
