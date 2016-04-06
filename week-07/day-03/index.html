@@ -13,6 +13,8 @@
 <script src="https://fb.me/react-dom-0.14.2.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 <script type="text/babel">
+
+
 	
 var Thumbnail = React.createClass({
 	getInitialState: function () {
@@ -21,27 +23,36 @@ var Thumbnail = React.createClass({
 		};
 	}, 
 	handleClick: function () {
+		this.props.handleClick(this.props.counter);
 		this.setState({
 			isSelected: !this.state.isSelected
 		});
 	},
 	render: function () {
-		if (this.state.isSelected) {
-			return <div className="thumbnail selected" onClick={this.handleClick}>{'Picture ' + this.props.counter}</div>;
-		} 
-		return <div className="thumbnail" onClick={this.handleClick}>{'Picture ' + this.props.counter}</div>;				
+		
+		return <div className={'thumbnail' + (this.state.isSelected ? ' selected' : '')} onClick={this.handleClick}>{'Picture ' + this.props.counter}</div>;				
 	} 
 });
 
 
 
 	var Boxes = React.createClass({
+  getInitialState: function () {
+  	return {
+  		pictureCount: 1
+  	};
+  },
+  changePicture: function (pictureCount){
+  	this.setState({
+  		pictureCount: pictureCount
+  	});
+  },
   render: function () {
     return 	<section className="container">
-		    			<div className="main-picture">Main Picture</div>
-		      		<Thumbnail counter="1" />
-		      		<Thumbnail counter="2" />
-		      		<Thumbnail counter="3" />
+		    			<div className="main-picture">{this.state.pictureCount}</div>
+		      		<Thumbnail counter="1" handleClick={this.changePicture} />
+		      		<Thumbnail counter="2" handleClick={this.changePicture} />
+		      		<Thumbnail counter="3" handleClick={this.changePicture} />
       			</section>;  
   }
 });
