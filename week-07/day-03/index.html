@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>React.js - Day 2</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+
+<div data-react-app></div>
+
+<script src="https://fb.me/react-0.14.2.js"></script>
+<script src="https://fb.me/react-dom-0.14.2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+<script type="text/babel">
+	
+var Thumbnail = React.createClass({
+	render: function () {
+		return <div className={this.props.className}>{this.props.label}</div>;
+	} 
+});
+
+
+
+	var Boxes = React.createClass({
+  render: function () {
+    return 	<section className="container">
+		    			<div className="main-picture">Main Picture</div>
+		      		<Thumbnail className="thumbnail-1" label="Picture 1" />
+		      		<Thumbnail className="thumbnail-2" label="Picture different" />
+		      		<Thumbnail className="thumbnail-3" label="Picture 3" />
+      			</section>;  
+  }
+});
+
+
+var parentElement = document.querySelector('[data-react-app]');
+var reactComponent = ReactDOM.render(<Boxes />, parentElement);
+
+</script>
+</body>
+</html>
