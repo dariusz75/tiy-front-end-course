@@ -11,7 +11,7 @@
 
 }
 
-.thumbnail-1{
+.thumbnail{
 	float: left;
 	background-color: #C0FFF2;
 	text-align: center;
@@ -20,29 +20,6 @@
 	height: 100px;
 }
 
-.thumbnail-2{
-	float: left;
-	background-color: #C0FFF2;
-	text-align: center;
-	margin: 20px 1% 0 1%;
-	width: 31%;
-	height: 100px;
-}
-
-.thumbnail-3{
-	float: left;
+.selected {
 	background-color: red;
-	text-align: center;
-	margin: 20px 1% 0 1%;
-	width: 31%;
-	height: 100px;
-}
-
-.thumbnail-4{
-	float: left;
-	background-color: #C0FFF2;
-	text-align: center;
-	margin: 20px 1% 0 1%;
-	width: 23%;
-	height: 100px;
 }

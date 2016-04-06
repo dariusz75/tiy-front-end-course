@@ -15,8 +15,21 @@
 <script type="text/babel">
 	
 var Thumbnail = React.createClass({
+	getInitialState: function () {
+		return {
+			isSelected: false
+		};
+	}, 
+	handleClick: function () {
+		this.setState({
+			isSelected: !this.state.isSelected
+		});
+	},
 	render: function () {
-		return <div className={'thumbnail-' + this.props.counter}>{'Picture ' + this.props.counter}</div>;
+		if (this.state.isSelected) {
+			return <div className="thumbnail selected" onClick={this.handleClick}>{'Picture ' + this.props.counter}</div>;
+		} 
+		return <div className="thumbnail" onClick={this.handleClick}>{'Picture ' + this.props.counter}</div>;				
 	} 
 });
 
