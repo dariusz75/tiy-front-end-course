@@ -16,10 +16,10 @@
 	background-color: #C0FFF2;
 	text-align: center;
 	margin: 20px 1% 0 1%;
-	width: 31%;
+	width: 22.5%;
 	height: 100px;
 }
 
 .selected {
-	background-color: red;
+	border: solid 1px red;
 }
