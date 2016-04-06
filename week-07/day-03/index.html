@@ -16,7 +16,7 @@
 	
 var Thumbnail = React.createClass({
 	render: function () {
-		return <div className={this.props.className}>{this.props.label}</div>;
+		return <div className={'thumbnail-' + this.props.counter}>{'Picture ' + this.props.counter}</div>;
 	} 
 });
 
@@ -26,9 +26,9 @@ var Thumbnail = React.createClass({
   render: function () {
     return 	<section className="container">
 		    			<div className="main-picture">Main Picture</div>
-		      		<Thumbnail className="thumbnail-1" label="Picture 1" />
-		      		<Thumbnail className="thumbnail-2" label="Picture different" />
-		      		<Thumbnail className="thumbnail-3" label="Picture 3" />
+		      		<Thumbnail counter="1" />
+		      		<Thumbnail counter="2" />
+		      		<Thumbnail counter="3" />
       			</section>;  
   }
 });
