@@ -1,0 +1,65 @@
+.container{
+    width: 80%;
+    margin: 0 auto 0 auto;
+}
+
+.main-picture{
+    margin-top: 30px;
+    width: 100%;
+    height: 350px;
+    background-color: #FFF8C8;
+    text-align: center;
+
+}
+
+.thumbnail{
+    float: left;
+    background-color: #C0FFF2;
+    text-align: center;
+    margin: 20px 1% 0 1%;
+    width: 23%;
+    height: 100px;
+}
+
+.glyphicon {
+    font-size: 50px;
+}
+
+.glyphicon-arrow-left{
+    padding-left: 3%;
+    top: -300px;
+}
+
+
+.glyphicon-arrow-right{
+    float: right;
+    padding-right: 3%;
+    top: -300px;
+}
+
+.thumbnail-2{
+    float: left;
+    background-color: #C0FFF2;
+    text-align: center;
+    margin: 20px 1% 0 1%;
+    width: 31%;
+    height: 100px;
+}
+
+.thumbnail-3{
+    float: left;
+    background-color: red;
+    text-align: center;
+    margin: 20px 1% 0 1%;
+    width: 31%;
+    height: 100px;
+}
+
+.thumbnail-4{
+    float: left;
+    background-color: #C0FFF2;
+    text-align: center;
+    margin: 20px 1% 0 1%;
+    width: 23%;
+    height: 100px;
+}
