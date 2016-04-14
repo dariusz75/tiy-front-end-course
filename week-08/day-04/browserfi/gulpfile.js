@@ -1,12 +1,11 @@
 var gulp = require('gulp');
-var browserify = require('browserify');
+var gulpBrowser = require('gulp-browser');
+var gulpRename = require("gulp-rename");
 
-gulp.task('default', function () {
-  console.log('Running a default task!');
-});
 
 gulp.task('bundle-javascript', function () {
-  console.log('Running a default task!');
-  return browserify('./source/main.js')
-  		 .bundle();
+  	gulp.src('./source/main.js')
+  		.pipe(gulpBrowser.browserify())
+  		.pipe(gulpRename('build.js'))
+  		.pipe(gulp.dest('./build/'));
 });
