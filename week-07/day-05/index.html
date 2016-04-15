@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>React.js</title>
+</head>
+<body>
+<!-- 
+1. state jest zdefiniowany na posiadanie tabeli 
+2. Nastepnie tworzymy funkcje ktora nazywamy sobie getListItems po to aby uzyskac wszystkie elementy li z zawartoscia z naszej tabeli zadeklarowanej w state
+3. zeby przejsc przez tabele uzywamy systemowej funkcji map(), referujac za pomoca this.state.models
+4. funkcja ta musi miec podany argument, ktory musi byc nastepna funkcja nazwana przez nas,
+w tym przypadku jest to createElement.
+5. 
+
+
+  -->
+  <div data-react-app></div>
+
+  <script src="https://fb.me/react-15.0.0.js"></script>
+  <script src="https://fb.me/react-dom-15.0.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  <script type="text/babel">
+
+    var TeslaCars = React.createClass({
+
+    getInitialState: function () {
+      return{
+        models: ['Model S', 'Model X', 'Model 3'],
+        
+      };
+    },
+
+
+
+    getListItems: function () {
+      return this.state.models.map(function createElement(modelName){
+       return <li>{modelName}</li>;
+      });
+    },
+
+      render: function () {
+
+      var listOfTeslaCars = <ul>{this.getListItems()}</ul>;
+
+      return listOfTeslaCars;
+      }
+    });
+
+    
+
+    var parentElement = document.querySelector('[data-react-app]');
+
+    ReactDOM.render(<TeslaCars />, parentElement);
+
+  </script>
+</body>
+</html>
