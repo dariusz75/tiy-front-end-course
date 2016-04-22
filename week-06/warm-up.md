@@ -6,5 +6,5 @@
 
 ###2. Write a function logFirst that takes 2 parameters: 1) an array of numbers and 2) a function that logs a number, then logFirst logs the first number in the array. 
 
-TO DO with Art
+#####Solution - http://jsbin.com/bukifu/edit?js,console
 
